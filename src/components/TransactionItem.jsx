@@ -1,7 +1,11 @@
 import { formmatCurrency } from "../utils/features";
 import css from "./TransactionItem.module.css";
 
-const TransactionItem = ({ data }) => {
+const TransactionItem = ({ data, onDelete }) => {
+  const handleDelete = () => {
+    onDelete(data.id);
+  };
+
   return (
     <li className={css.item}>
       <div className={css.content}>
@@ -15,7 +19,7 @@ const TransactionItem = ({ data }) => {
         {/* <button>
           <i className="bi bi-pencil-fill"></i>
         </button> */}
-        <button>
+        <button onClick={handleDelete}>
           <i className="bi bi-x"></i>
         </button>
       </div>

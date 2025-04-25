@@ -17,8 +17,12 @@ function App() {
     localStorage.setItem("transactions", JSON.stringify(transactions));
   }, [transactions]);
 
-  const handleAddTransaction = (newItem) => {
+  const handleAddItem = (newItem) => {
     setTransactions((prev) => [...prev, newItem]);
+  };
+
+  const handleDeleteItem = (id) => {
+    setTransactions((prev) => prev.filter((item) => item.id !== id));
   };
 
   const incomeTotal = transactions
@@ -36,8 +40,11 @@ function App() {
       <h1>용돈기입장</h1>
       <BalanceInfo balance={balance} />
       <IncomeExpenseInfo income={incomeTotal} expense={expenseTotal} />
-      <TransactionInput onAdd={handleAddTransaction} />
-      <TransactionList transactions={transactions} />
+      <TransactionInput onAdd={handleAddItem} />
+      <TransactionList
+        transactions={transactions}
+        onDelete={handleDeleteItem}
+      />
     </main>
   );
 }
