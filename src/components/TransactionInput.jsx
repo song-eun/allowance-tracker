@@ -5,9 +5,18 @@ const TransactionInput = ({ onAdd }) => {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("income");
+  const [error, setError] = useState("");
 
   const handleSubmit = () => {
-    if (!description || !amount) return;
+    if (!description.trim()) {
+      setError("내용을 입력해주세요");
+      return;
+    }
+
+    if (!amount || isNaN(amount) || Number(amount) <= 0) {
+      setError("금액을 올바르게 입력해주세요");
+      return;
+    }
 
     const newItem = {
       id: Math.round(Math.random() * 9999),
@@ -20,6 +29,7 @@ const TransactionInput = ({ onAdd }) => {
     setDescription("");
     setAmount("");
     setType("income");
+    setError("");
   };
 
   return (
@@ -62,7 +72,7 @@ const TransactionInput = ({ onAdd }) => {
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
-
+      {error && <p className={css.error}>{error}</p>}
       <button onClick={handleSubmit}>거래 추가</button>
     </div>
   );
