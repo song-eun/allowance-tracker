@@ -1,15 +1,15 @@
 import { formmatCurrency } from "../utils/features";
 import css from "./IncomeExpenseInfo.module.css";
 
-const IncomeExpenseInfo = () => {
+const IncomeExpenseInfo = ({ income, expense }) => {
   return (
     <div className={css.container}>
       <div className={css.income}>
         <h2>수입</h2>
-        <span>{formmatCurrency(300000)}</span>
+        <span>{formmatCurrency(income)}</span>
       </div>
       <div className={css.expense}>
-        <h2>지출</h2> <span>{formmatCurrency(100000)}</span>
+        <h2>지출</h2> <span>{formmatCurrency(expense)}</span>
       </div>
     </div>
   );

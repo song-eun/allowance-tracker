@@ -21,11 +21,21 @@ function App() {
     setTransactions((prev) => [...prev, newItem]);
   };
 
+  const incomeTotal = transactions
+    .filter((item) => item.type === "income")
+    .reduce((sum, item) => sum + item.amount, 0);
+
+  const expenseTotal = transactions
+    .filter((item) => item.type === "expense")
+    .reduce((sum, item) => sum + item.amount, 0);
+
+  const balance = incomeTotal - expenseTotal;
+
   return (
     <main className="wrapper">
       <h1>용돈기입장</h1>
-      <BalanceInfo />
-      <IncomeExpenseInfo />
+      <BalanceInfo balance={balance} />
+      <IncomeExpenseInfo income={incomeTotal} expense={expenseTotal} />
       <TransactionInput onAdd={handleAddTransaction} />
       <TransactionList transactions={transactions} />
     </main>
