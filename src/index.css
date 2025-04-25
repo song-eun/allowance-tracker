@@ -1,3 +1,57 @@
 @charset "UTF-8";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@200&display=swap");
+
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+
+  --gray: #f7f7f7;
+  --green: #2ecc72;
+  --red: #bc392a;
+  --error: #e74a43;
+  --purple: #9c89ff;
+  --white: #ffffff;
+  --black: #32302c;
+
+  --fs8: 8px;
+  --fs12: 12px;
+  --fs16: 16px;
+  --fs20: 20px;
+  --fs26: 26px;
+  --fs33: 33px;
+  --fs64: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--gray);
+}
+
+main {
+  max-width: 1200px;
+  width: calc(100% - 20rem);
+  margin: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}

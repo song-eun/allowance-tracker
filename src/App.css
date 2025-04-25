@@ -1,0 +1,12 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+h1 {
+  grid-column: 1 / -1; /* 제목은 전체 너비 차지 */
+  text-align: center;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,9 @@
+.container ul {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: visible;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs8);
+  margin-top: var(--fs12);
+}
