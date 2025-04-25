@@ -1,9 +1,22 @@
+import { useState } from "react";
 import { formmatCurrency } from "../utils/features";
 import css from "./TransactionItem.module.css";
+import Modal from "./Modal";
 
 const TransactionItem = ({ data, onDelete }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleDelete = () => {
+    setIsModalOpen(true);
+  };
+
+  const confirmDelete = () => {
     onDelete(data.id);
+    setIsModalOpen(false);
+  };
+
+  const cancelDelete = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -23,6 +36,13 @@ const TransactionItem = ({ data, onDelete }) => {
           <i className="bi bi-x"></i>
         </button>
       </div>
+      {isModalOpen && (
+        <Modal
+          message={"정말 삭제하시겠습니까?"}
+          onConfirm={confirmDelete}
+          onCancel={cancelDelete}
+        />
+      )}
     </li>
   );
 };

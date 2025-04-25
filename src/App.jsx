@@ -6,6 +6,7 @@ import BalanceInfo from "./components/BalanceInfo";
 import IncomeExpenseInfo from "./components/IncomeExpenseInfo";
 import TransactionInput from "./components/TransactionInput";
 import TransactionList from "./components/TransactionList";
+
 import { useEffect, useState } from "react";
 
 function App() {
