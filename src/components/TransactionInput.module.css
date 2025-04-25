@@ -13,6 +13,7 @@
   color: var(--white);
   background-color: var(--purple);
   padding: var(--fs8);
+  cursor: pointer;
 }
 
 input[type="radio"] {
