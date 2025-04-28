@@ -37,6 +37,7 @@ const TransactionInput = ({ onAdd }) => {
       <h2>새로운 거래 추가</h2>
       <label htmlFor="description">내용 </label>
       <input
+        className={css.inputField}
         id="description"
         type="text"
         placeholder="내용 입력..."
@@ -67,6 +68,7 @@ const TransactionInput = ({ onAdd }) => {
       </div>
 
       <input
+        className={css.inputField}
         type="number"
         placeholder="금액 입력..."
         value={amount}

@@ -10,6 +10,7 @@
 .expense {
   flex: 1;
   display: flex;
+  gap: var(--fs8);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -18,4 +19,12 @@
 
 .income {
   border-right: 3px solid var(--gray);
+}
+
+.income span {
+  color: var(--green);
+}
+
+.expense span {
+  color: var(--red);
 }

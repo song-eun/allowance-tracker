@@ -22,6 +22,12 @@
 
 .actions button i {
   cursor: pointer;
+  font-size: var(--fs20);
+  transition: 0.3s;
+}
+
+.actions button i:hover {
+  color: var(--error);
 }
 
 .income {
